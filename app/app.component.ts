@@ -4,10 +4,15 @@ import { Component } from '@angular/core';
     selector: 'my-app',
     template: `
         <div class="container">
-            <div class="col-xs-3">
+            <div class="col-xs-4">
                 <weather-widget></weather-widget>
             </div>
         </div>
-    `
+    `,
+    styles: [`
+        .container {
+            padding-top: 2rem;
+        }
+`]
 })
 export class AppComponent { }
