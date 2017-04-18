@@ -1,24 +1,24 @@
-<div class="card">
+<div class="card" (click)="toggleUnits()">
     <div class="card-header">
         <div class="col-xs-8">
-            <p>Atlanta, GA</p>
+            <p>{{ currentLocation }}</p>
         </div>
         <div class="col-xs-4 text-xs-right">
-            <h1>40&deg;</h1>
+            <h1>{{weatherData.temp | tempUnit: currentTempUnit |number: '.0-0' }}&deg;</h1>
         </div>
     </div>
     <div class="card-block">
-        <h1>Icon</h1>
-        <p>Sunny</p>
+        <canvas id="icon"></canvas>
+        <p>{{weatherData.summary}}</p>
     </div>
     <div class="card-footer">
         <div class="col-xs-5">
             <p>Wind</p>
-            <p>4mph</p>
+            <p>{{weatherData.wind + " " | speedUnit: currentSpeedUnit }}</p>
         </div>
         <div class="col-xs-5 offset-xs-2">
             <p>Humidty:</p>
-            <p>10%</p>
+            <p>{{weatherData.humidity | percent }}</p>
         </div>
     </div>
 </div>
